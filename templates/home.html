@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+        <div>
+            <h3>Forma Secuencial</h3>
+            <span>Tiempo: {{ time_secuencial }}</span>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Ip</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Región</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Org</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for secuencial in secuenciales %}
+
+                    <tr>
+                        <th scope="row">{{ secuencial.ip }}</th>
+                        <td>{{ secuencial.city }}</td>
+                        <td>{{ secuencial.region }}</td>
+                        <td>{{ secuencial.country }}</td>
+                        <td>{{ secuencial.org }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div>
+            <h3>Forma Paralelo</h3>
+            <span>Tiempo: {{ time_paralelo }}</span>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Ip</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Región</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Org</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for paralelo in paralelos %}
+
+                    <tr>
+                        <th scope="row">{{ paralelo.ip }}</th>
+                        <td>{{ paralelo.city }}</td>
+                        <td>{{ paralelo.region }}</td>
+                        <td>{{ paralelo.country }}</td>
+                        <td>{{ paralelo.org }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% endblock %}
